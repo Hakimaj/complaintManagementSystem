@@ -20,7 +20,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class OrganizationalUnitType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

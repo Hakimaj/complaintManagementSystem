@@ -18,7 +18,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Compliant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

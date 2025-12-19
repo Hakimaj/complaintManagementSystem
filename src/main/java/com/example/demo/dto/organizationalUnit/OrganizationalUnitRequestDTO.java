@@ -7,6 +7,7 @@ import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 @Data
+
 public class OrganizationalUnitRequestDTO {
 
     @NotBlank(message = "Unit Name is required")
