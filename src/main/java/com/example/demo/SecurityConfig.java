@@ -85,6 +85,7 @@ public class SecurityConfig {
 
 
                         ).permitAll()
+                        .anyRequest().authenticated()
 
                 )
                 .authenticationProvider(authenticationProvider())

@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.dto.user.*;
 import com.example.demo.service.user.AuthService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,12 +18,14 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/login")
+    @SecurityRequirement(name = "")//to make this endpoint appear in swagger
     public ResponseEntity<ApiResponse<AuthResponseDto>> login(@Valid @RequestBody LoginDto loginDto) {
         AuthResponseDto authResponse = authService.login(loginDto);
         return ResponseEntity.ok(ApiResponse.success("Login successful", authResponse));
     }
 
     @PostMapping("/register")
+    @SecurityRequirement(name = "")//to make this endpoint appear in swagger
     public ResponseEntity<ApiResponse<UserDto>> register(@Valid @RequestBody RegisterDto registerDto) {
         UserDto user = authService.register(registerDto);
         return new ResponseEntity<>(ApiResponse.success("User registered successfully", user), HttpStatus.CREATED);
